@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <h1 style="text-align:center; color:#2d3436; font-family:Poppins, Arial; margin-bottom:20px;">Here is the jobs available in Pune</h1>
+    {% if data %}
+    <table style="width:100%; border-collapse:separate; border-spacing:0; background:white; 
+               border-radius:12px; overflow:hidden; font-family:Poppins, Arial; 
+               font-size:16px; box-shadow:0 4px 20px rgba(0,0,0,0.07);">
+      <thead style="background:#0984e3; color:white;">
+        <th style="padding:14px; text-align:left;">Data</th>
+        <th style="padding:14px; text-align:left;">company</th>
+        <th style="padding:14px; text-align:left;">title</th>
+        <th style="padding:14px; text-align:left;">address</th>
+        <th style="padding:14px; text-align:left;">salary</th>
+        <th style="padding:14px; text-align:left;">mail</th>
+        <th style="padding:14px; text-align:left;">phone</th>
+      </thead>
+      {%for d in data%}
+      <tr style="border-bottom:1px solid #eee; transition:0.25s;"
+      onmouseover="this.style.background='#dfefff';"
+      onmouseout="this.style.background='';">
+        <td style="padding:14px;">{{d.date}}</td>
+        <td style="padding:14px;">{{d.company}}</td>
+        <td style="padding:14px;">{{d.title}}</td>
+        <td style="padding:14px;">{{d.address}}</td>
+        <td style="padding:14px;">{{d.salary}}</td>
+        <td style="padding:14px;">{{d.email}}</td>
+        <td style="padding:14px;">{{d.phone}}</td>
+      </tr>
+      {% endfor %}
+    {%else%}
+    <p>jobs not found</p>
+    {%endif%}
+    </table>
+</body>
+</html>
