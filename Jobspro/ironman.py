@@ -6,7 +6,7 @@ import django
 django.setup()
 
 from faker import Faker
-
+print("bye")
 fake=Faker()
 from random import randint
 #hi
